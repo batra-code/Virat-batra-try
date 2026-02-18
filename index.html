@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My First Website</title>
+<style>
+body {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background: #fef6e4;
+  transition: 0.5s;
+}
+
+.banner {
+  background: orange;
+  padding: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 20px;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+h2 {
+  margin-top: 50px;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 20px;
+  margin: 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+#good {
+  background: green;
+  color: white;
+}
+
+#bad {
+  background: red;
+  color: white;
+  position: absolute;
+}
+</style>
+</head>
+
+<body>
+
+<div class="banner">🎉 MY FIRST WEBSITE 🎉</div>
+
+<h2>Do you think this website is good?</h2>
+
+<button id="good">GOOD 💚</button>
+<button id="bad">BAD 😈</button>
+
+<h1 id="message"></h1>
+
+<script>
+let goodBtn = document.getElementById("good");
+let badBtn = document.getElementById("bad");
+let message = document.getElementById("message");
+let size = 1;
+
+badBtn.addEventListener("mouseover", function() {
+  let x = Math.random() * window.innerWidth;
+  let y = Math.random() * window.innerHeight;
+  badBtn.style.left = x + "px";
+  badBtn.style.top = y + "px";
+
+  size += 0.2;
+  goodBtn.style.transform = "scale(" + size + ")";
+});
+
+goodBtn.addEventListener("click", function() {
+  document.body.style.background = "linear-gradient(45deg, pink, yellow)";
+  message.innerHTML = "I KNEW YOU WOULD CHOOSE GOOD 😎💖";
+});
+</script>
+
+</body>
+</html>
